@@ -63,6 +63,36 @@ public class Leetcode27 {
                 nums[a] = temp;
             }
         }
+
+        /** GIVEN SOLUTION **/
+        public int removeElementSolution1(int[] nums, int val) {
+            int i = 0;
+            for (int j = 0; j < nums.length; j++) {
+                if (nums[j] != val) {
+                    nums[i] = nums[j];
+                    i++;
+                }
+            }
+            return i;
+        }
+
+        /** GIVEN SOLUTION 2 **/
+        public int removeElementSolution2(int[] nums, int val) {
+            int i = 0;
+            int n = nums.length;
+            while (i < n) {
+                if (nums[i] == val) {
+                    nums[i] = nums[n - 1];
+                    // reduce array size by one
+                    n--;
+                } else {
+                    i++;
+                }
+            }
+            return n;
+        }
+
+        //My algorithm performs better than each solution, though is much more verbose. I should consider simpler solutions when trying to solve these problems.
     }
 
     class MainClass {
