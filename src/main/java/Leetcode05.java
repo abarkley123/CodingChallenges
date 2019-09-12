@@ -1,34 +1,31 @@
 class Solution {
     
     public String longestPalindrome(String s) {
-        int i = 0, len = 0;
-        if (s == null || (len = s.length()) == 0) return "";
-        else if (len == 1) return s;
+        int start = 0, end = 0, length = 0;
+        if (s == null || (length = s.length()) == 0) return "";
+        else if (length == 1) return s;
         
-        List<String> dp = new ArrayList<>();
-        dp.add("");
-        
-        while (i < len) {
-            getPalindrome(s.substring(i++), dp);
+        for (int i = 0; i < length; i++) {
+            int len1 = longestPalindrome(s, i, i);
+            int len2 = longestPalindrome(s, i, i + 1);
+            int len = Math.max(len1, len2);
+            
+            if (len > end - start) {
+                start = i - (len - 1) / 2;
+                end = i + len / 2;
+            }
         }
         
-        return dp.get(dp.size() - 1);
+        return s.substring(start, end + 1);
     }
     
-    private void getPalindrome(String s, List<String> dp) {
-        if (s.length() <= dp.get(dp.size() - 1).length()) return;
-        
-        int len = s.length();
-        StringBuilder sb = new StringBuilder(len);
-        outerloop: for (int x = 0; x < len; x++) {
-            sb.append(s.charAt(x));
-            
-            int i = 0, j = x;
-            while (i < j) {
-                if (sb.charAt(i++) != sb.charAt(j--)) continue outerloop;
-            }
-            
-            if (x + 1 > dp.get(dp.size() - 1).length()) dp.add(sb.toString());
+    private int longestPalindrome(String s, int left, int right) {
+        int i = left, j = right, len = s.length();
+        while (i >= 0 && j < len && s.charAt(i) == s.charAt(j)) {
+            i--;
+            j++;
         }
+        
+        return j - i - 1;
     }
 }
