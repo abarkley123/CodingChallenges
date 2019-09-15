@@ -1,5 +1,6 @@
 class Solution {
     
+    /** Concise solution: 1ms **/
     public void merge(int[] nums1, int m, int[] nums2, int n) {
         for (int i = m; i - m < n; i++) {
             nums1[i] = nums2[i - m];
@@ -8,7 +9,7 @@ class Solution {
         Arrays.sort(nums1);
     }
     
-    /** In place modify array **/
+    /** Alternative solution: In place modify array - 0ms **/
     public void merge(int[] nums1, int m, int[] nums2, int n) {
         int k = nums1.length - 1, i = m - 1, j = n - 1;
         
