@@ -5,7 +5,7 @@ class Solution {
     
     public Solution(int[] nums) {
         this.arr = new int[nums.length];
-        this.generator = new Random(nums.length);
+        this.generator = new Random(System.nanoTime());
         for (int i = 0; i < nums.length; i++) this.arr[i] = nums[i];
     }
     
