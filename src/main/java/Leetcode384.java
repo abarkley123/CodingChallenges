@@ -6,9 +6,7 @@ class Solution {
     public Solution(int[] nums) {
         this.arr = new int[nums.length];
         this.generator = new Random(nums.length);
-        for (int i = 0; i < nums.length; i++) {
-            this.arr[i] = nums[i];
-        }
+        for (int i = 0; i < nums.length; i++) this.arr[i] = nums[i];
     }
     
     /** Resets the array to its original configuration and return it. */
@@ -18,13 +16,11 @@ class Solution {
     
     /** Returns a random shuffling of the array. */
     public int[] shuffle() {
-        
-        Set<Integer> valuesUsed = new HashSet<>();
         int[] copy = new int[arr.length];
 
-        int ind = 0;
-        for (int i = 0; i < arr.length; i++) {
-            while ((ind = generator.nextInt(arr.length)) < 0 || !valuesUsed.add(ind)) continue;
+        int i = 0, ind = 0;
+        for (i = 0; i < arr.length; i++) {
+            while ((ind = generator.nextInt(arr.length)) < 0 || copy[ind] != 0) continue;
             copy[ind] = arr[i];
         }
         
