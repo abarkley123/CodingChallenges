@@ -26,6 +26,19 @@ class Solution {
         
         return copy;
     }
+    
+    /** Alternative method using ThreadLocalRandom, allowing the removal of the 'generator' instance variable **/
+    public int[] shuffle() {
+        int[] copy = new int[arr.length];
+
+        int i = 0, ind = 0;
+        for (i = 0; i < arr.length; i++) {
+            while ((ind = ThreadLocalRandom.current().nextInt(0, arr.length)) < 0 || copy[ind] != 0) continue;
+            copy[ind] = arr[i];
+        }
+        
+        return copy;
+    }
 }
 
 /**
