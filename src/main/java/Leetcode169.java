@@ -24,4 +24,10 @@ class Solution {
         
         return nums[0];
     }
+    
+    /** Super efficient sorting solution - 1ms 41.2mb **/
+    public int majorityElement(int[] nums) {
+        Arrays.sort(nums);
+        return nums[nums.length / 2];
+    }
 }
