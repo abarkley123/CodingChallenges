@@ -19,6 +19,7 @@ class MagicDictionary {
             
             if (len != s.length()) continue;
             for (int i = 0; i < len; i++) {
+                if (diffs > 1) break;
                 if (s.charAt(i) != word.charAt(i)) diffs++;
             }
             
