@@ -1,5 +1,6 @@
 class Solution {
     
+    /** O(n^2) solution - 13ms 38.8mb **/
     public void moveZeroes(int[] nums) {
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] == 0) {
@@ -11,5 +12,16 @@ class Solution {
                 } else break;
             }
         }
+    }
+    
+    /** O(n) solution - 0ms 36.3mb **/
+    public void moveZeroes(int[] nums) {
+        int i = 0, numZeroes = 0;
+        for (i = 0; i < nums.length; i++) {
+            if (nums[i] == 0) numZeroes++;
+            else nums[i - numZeroes] = nums[i];
+        }
+        
+        Arrays.fill(nums, nums.length - numZeroes, nums.length, 0);
     }
 }
