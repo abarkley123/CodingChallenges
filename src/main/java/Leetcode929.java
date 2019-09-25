@@ -1,5 +1,6 @@
 class Solution {
     
+    /** Using stringbuilder and substring - 10ms 38.1MB **/
     public int numUniqueEmails(String[] emails) {
         int counter = 0;
         Set<String> emailSet = new HashSet<>();
@@ -15,11 +16,8 @@ class Solution {
                     break;
                 } else sb.append(s.charAt(index));
             }
-            
-            sb.append('@');
-            while (index++ < len - 1) sb.append(s.charAt(index));
-            System.out.println(sb.toString());
-            if (emailSet.add(sb.toString())) counter++;
+
+            if (emailSet.add(sb.append('@').toString() + s.substring(++index))) counter++;
         }
         
         return counter;
