@@ -1,6 +1,6 @@
 class Solution {
     
-    /** Use int to determine next move - 5ms (93.27%) 42.7MB (100%) **/
+    /** Use int as flag - 4ms(99.85%) 42.8 MB (100%) **/
     public int maxTurbulenceSize(int[] A) {
         if (A == null || A.length == 0) return 0;
         else if (A.length == 1) return 1;
@@ -15,9 +15,17 @@ class Solution {
                 last = 0;
             } else {
                 max = Math.max(max, curr);
-                curr = 1;
-                last = -1;
-                if (A[i + 1] != A[i]) i--;
+                
+                if (A[i + 1] > A[i]) {
+                    curr = 2;
+                    last = 1;
+                } else if (A[i + 1] < A[i]) {
+                    curr = 2;
+                    last = 0;
+                } else {
+                    curr = 1;
+                    last = -1;
+                }
             }
         }
         
