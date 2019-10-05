@@ -12,4 +12,19 @@ class Solution {
         
         return dp[n];
     }
+    
+    /** Alt solution without using array - 0ms, 32.8MB **/
+    public int climbStairs(int n) {
+        if (n <= 1) return 1;
+        int first = 1, second = 2, third = 2;
+        
+        for (int i = 3; i <= n; i++) {
+            third = first + second;
+            int temp = second;
+            second = third;
+            first = temp;
+        }
+        
+        return third;
+    }
 }
