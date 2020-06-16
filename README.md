@@ -5,19 +5,32 @@ Each demonstration will be written using **Java SE 8**, however the principles a
 
 # Contents 
 
-- [Data structures & algorithms](#data-structures-&-algorithms)
+- [Data structures and algorithms](#data-structures-and-algorithms)
 - [System design](#system-design)
-- [Acknowledgements & resources](#acknowledgments-&-resources)
+- [Acknowledgements & resources](#acknowledgments-and-resources)
 
-# Data structures & algorithms
+# Data structures and algorithms
 
 Data structures & algorithms are vital components for any techincal interview. These allow you to simplify complex problems and craft simple, efficient solutions.
 
-## Tree
+## Data structures
 
-## List
+### Tree
 
-## Array
+#### Graph
+
+#### Trie
+
+#### Binary Tree
+
+### List
+
+### Array
+
+## Algorithms
+
+### Dynamic Programming
+
 # System design
 
 # Author
@@ -26,7 +39,7 @@ Data structures & algorithms are vital components for any techincal interview. T
 # License
 This project is licensed under the MIT license - https://github.com/abarkley123/CodingInterview/blob/master/LICENSE
 
-# Acknowledgments & Resources
+# Acknowledgments and Resources
 
 Great resources for coding interview prep:
 * Kevin Naughton Jr - https://www.youtube.com/channel/UCKvwPt6BifPP54yzH99ff1g
