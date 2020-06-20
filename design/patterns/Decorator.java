@@ -65,11 +65,10 @@ public void whenDecoratorsInjectedAtRuntime_thenConfigSuccess() {
     ChristmasTree tree2 = new BubbleLights(new Garland(new Garland(new ChristmasTreeImpl())));
     assertEquals(tree2.decorate(), "Christmas tree with Garland with Garland with Fairy Lights");
 }
-// https://www.baeldung.com/java-decorator-pattern
 
-/* This pattern is a good choice in the following cases:
+/* This pattern is a good choice in the following cases: 
 
 When we wish to add, enhance or even remove the behavior or state of objects
 When we just want to modify the functionality of a single object of class and leave others unchanged
-
+See more - https://www.baeldung.com/java-decorator-pattern
 */
