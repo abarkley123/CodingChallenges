@@ -3,8 +3,9 @@ package main.java;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+// search in sorted array - https://leetcode.com/problems/search-in-rotated-sorted-array/description/
 
-//Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.
+// The order is rotated at some pivot unknown to you beforehand.
 //
 //        (i.e., [0,1,2,4,5,6,7] might become [4,5,6,7,0,1,2]).
 //
