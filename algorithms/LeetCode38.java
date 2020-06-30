@@ -1,3 +1,7 @@
+//Given an integer n where 1 ≤ n ≤ 30, generate the nth term of the count-and-say sequence. 
+// You can do so recursively, in other words from the previous member read off the digits, counting the number of digits in groups of the same digit.
+// https://leetcode.com/problems/count-and-say/ 
+
 class Solution {
     
     public String countAndSay(int n) {
