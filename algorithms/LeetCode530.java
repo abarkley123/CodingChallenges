@@ -7,7 +7,9 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
-class Solution {
+
+// minimum absolute distance - https://leetcode.com/problems/minimum-absolute-difference-in-bst/
+Class Solution {
     
     public int getMinimumDifference(TreeNode root) {
         List<Integer> list = new ArrayList<>();
