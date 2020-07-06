@@ -8,6 +8,7 @@ package main.java;
 //
 //        Given a list of query words, return the number of words that are stretchy.
 
+// expressive words - https://leetcode.com/problems/expressive-words/
 public class LeetCode809 {
 
     public int expressiveWords(String S, String[] words) {
